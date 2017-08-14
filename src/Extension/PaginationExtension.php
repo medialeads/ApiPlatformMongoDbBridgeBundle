@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace AppBundle\ApiPlatform\Bridge\Doctrine\MongoDB\Extension;
+namespace Medialeads\ApiPlatformMongoDbBridge\Extension;
 
-use AppBundle\ApiPlatform\Bridge\Doctrine\MongoDB\Paginator;
+use Medialeads\ApiPlatformMongoDbBridge\Util\Paginator;
 use ApiPlatform\Core\Metadata\Resource\Factory\ResourceMetadataFactoryInterface;
 use ApiPlatform\Core\Metadata\Resource\ResourceMetadata;
 use Doctrine\Common\Persistence\ManagerRegistry;

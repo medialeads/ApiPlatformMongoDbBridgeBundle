@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace AppBundle\ApiPlatform\Bridge\Doctrine\MongoDB\Extension;
+namespace Medialeads\ApiPlatformMongoDbBridge\Extension;
 
 use ApiPlatform\Core\Api\FilterCollection;
-use AppBundle\ApiPlatform\Bridge\Doctrine\MongoDB\Filter\FilterInterface;
+use Medialeads\ApiPlatformMongoDbBridge\Filter\FilterInterface;
 use ApiPlatform\Core\Metadata\Resource\Factory\ResourceMetadataFactoryInterface;
 use Doctrine\ODM\MongoDB\Query\Builder;
 

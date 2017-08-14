@@ -11,7 +11,7 @@
 
 declare(strict_types=1);
 
-namespace AppBundle\ApiPlatform\Bridge\Doctrine\MongoDB\Filter;
+namespace Medialeads\ApiPlatformMongoDbBridge\Filter;
 
 use ApiPlatform\Core\Bridge\Doctrine\Orm\Util\QueryChecker;
 use ApiPlatform\Core\Bridge\Doctrine\Orm\Util\QueryNameGeneratorInterface;

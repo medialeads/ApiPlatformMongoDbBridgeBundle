@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace AppBundle\ApiPlatform\Bridge\Doctrine\MongoDB;
+namespace Medialeads\ApiPlatformMongoDbBridge\Provider;
 
-use AppBundle\ApiPlatform\Bridge\Doctrine\MongoDB\Extension\QueryCollectionExtensionInterface;
-use AppBundle\ApiPlatform\Bridge\Doctrine\MongoDB\Extension\QueryResultExtensionInterface;
+use Medialeads\ApiPlatformMongoDbBridge\Extension\QueryCollectionExtensionInterface;
+use Medialeads\ApiPlatformMongoDbBridge\Extension\QueryResultExtensionInterface;
 use ApiPlatform\Core\DataProvider\CollectionDataProviderInterface;
 use ApiPlatform\Core\Exception\ResourceClassNotSupportedException;
 use Doctrine\Common\Persistence\ManagerRegistry;

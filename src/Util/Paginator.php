@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace AppBundle\ApiPlatform\Bridge\Doctrine\MongoDB;
+namespace Medialeads\ApiPlatformMongoDbBridge\Util;
 
 use ApiPlatform\Core\DataProvider\PaginatorInterface;
 use Doctrine\ODM\MongoDB\Cursor;

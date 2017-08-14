@@ -1,0 +1,68 @@
+services:
+    api_platform.doctrine.metadata_factory:
+        class: Doctrine\Common\Persistence\Mapping\ClassMetadataFactory
+        factory: ["@doctrine_mongodb.odm.default_document_manager", "getMetadataFactory"]
+        
+    api_platform.doctrine.mongodb.collection_data_provider:
+        abstract: true
+        arguments:
+            - "@doctrine_mongodb"
+            -
+            
+    api_platform.doctrine.mongodb.item_data_provider:
+        abstract: true
+        arguments:
+            - "@doctrine_mongodb"
+            - "@api_platform.metadata.property.name_collection_factory"
+            - "@api_platform.metadata.property.metadata_factory"
+            -
+            
+    api_platform.doctrine.mongodb.default.collection_data_provider:
+        parent: "api_platform.doctrine.mongodb.collection_data_provider"
+        class: Medialeads\ApiPlatformMongoDbBridge\Provider\CollectionDataProvider
+        tags: 
+          - { name: api_platform.collection_data_provider }
+          
+    api_platform.doctrine.mongodb.default.item_data_provider:
+        parent: "api_platform.doctrine.mongodb.item_data_provider"
+        class: Medialeads\ApiPlatformMongoDbBridge\Provider\ItemDataProvider
+        tags:
+          - { name: api_platform.item_data_provider }
+          
+    api_platform.doctrine.mongodb.metadata.property.factory.item:
+        class: Medialeads\ApiPlatformMongoDbBridge\Metadata\Property\DoctrineMongoDBPropertyMetadataFactory
+        decorates: "api_platform.metadata.property.metadata_factory"
+        arguments:
+          - "@doctrine_mongodb"
+          - "@api_platform.doctrine.mongodb.metadata.property.factory.item.inner"
+          
+    api_platform.doctrine.listener.view.write:
+        class: ApiPlatform\Core\Bridge\Doctrine\EventListener\WriteListener
+        arguments:
+          - "@doctrine_mongodb"
+        tags:
+          - { name: kernel.event_listener, event: kernel.view, method: onKernelView, priority: 20 }
+          
+    api_platform.doctrine.mongodb.query_extension.filter:
+        class: Medialeads\ApiPlatformMongoDbBridge\Extension\FilterExtension
+        arguments:
+          - "@api_platform.metadata.resource.metadata_factory"
+          - "@api_platform.filters"
+        tags:
+          - { name: api_platform.doctrine.mongodb.query_extension.collection }
+          
+    api_platform.doctrine.mongodb.query_extension.pagination:
+        class: Medialeads\ApiPlatformMongoDbBridge\Extension\PaginationExtension
+        arguments:
+          - "@doctrine_mongodb"
+          - "@request_stack"
+          - "@api_platform.metadata.resource.metadata_factory"
+          - "%api_platform.collection.pagination.enabled%"
+          - "%api_platform.collection.pagination.client_enabled%"
+          - "%api_platform.collection.pagination.client_items_per_page%"
+          - "%api_platform.collection.pagination.items_per_page%"
+          - "%api_platform.collection.pagination.page_parameter_name%"
+          - "%api_platform.collection.pagination.enabled_parameter_name%"
+          - "%api_platform.collection.pagination.items_per_page_parameter_name%"
+        tags:
+          - { name: api_platform.doctrine.mongodb.query_extension.collection }

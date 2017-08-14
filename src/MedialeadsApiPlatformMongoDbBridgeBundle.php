@@ -1,12 +1,12 @@
 <?php
 
-namespace ApiPlatformMongoDbBridgeBundle;
+namespace Medialeads\ApiPlatformMongoDbBridge;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use AppBundle\DependencyInjection\Compiler\MongoDBExtensionPass;
+use Medialeads\ApiPlatformMongoDbBridge\DependencyInjection\Compiler\MongoDBExtensionPass;
 
-class AppBundle extends Bundle
+class MedialeadsApiPlatformMongoDbBridgeBundle extends Bundle
 {
     public function build(ContainerBuilder $container)
     {

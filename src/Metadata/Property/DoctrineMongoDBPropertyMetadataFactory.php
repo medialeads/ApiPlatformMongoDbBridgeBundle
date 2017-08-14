@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace AppBundle\ApiPlatform\Bridge\Doctrine\MongoDB\Metadata\Property;
+namespace Medialeads\ApiPlatformMongoDbBridge\Metadata\Property;
 
 use ApiPlatform\Core\Metadata\Property\Factory\PropertyMetadataFactoryInterface;
 use ApiPlatform\Core\Metadata\Property\PropertyMetadata;

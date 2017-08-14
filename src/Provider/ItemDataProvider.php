@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace AppBundle\ApiPlatform\Bridge\Doctrine\MongoDB;
+namespace Medialeads\ApiPlatformMongoDbBridge\Provider;
 
-use AppBundle\ApiPlatform\Bridge\Doctrine\MongoDB\Extension\QueryItemExtensionInterface;
+use Medialeads\ApiPlatformMongoDbBridge\Extension\QueryItemExtensionInterface;
 use ApiPlatform\Core\DataProvider\ItemDataProviderInterface;
 use ApiPlatform\Core\Exception\InvalidArgumentException;
 use ApiPlatform\Core\Exception\ResourceClassNotSupportedException;

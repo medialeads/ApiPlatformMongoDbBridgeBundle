@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace AppBundle\ApiPlatform\Bridge\Doctrine\MongoDB\Extension;
+namespace Medialeads\ApiPlatformMongoDbBridge\Extension;
 
 use Doctrine\ODM\MongoDB\Query\Builder;
 

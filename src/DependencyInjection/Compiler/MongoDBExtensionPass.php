@@ -11,7 +11,7 @@
 
 declare(strict_types=1);
 
-namespace AppBundle\DependencyInjection\Compiler;
+namespace Medialeads\ApiPlatformMongoDbBridge\DependencyInjection\Compiler;
 
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
