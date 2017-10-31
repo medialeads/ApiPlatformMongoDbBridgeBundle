@@ -48,7 +48,7 @@ final class MedialeadsApiPlatformMongoDbBridgeExtension extends Extension
      * @param ContainerBuilder $container
      * @param array $bundles
      */
-    private function getResourcesToWatch(ContainerBuilder $container, array $bundles): void
+    private function getResourcesToWatch(ContainerBuilder $container, array $bundles)
     {
         $resourceClassDirectories = [];
 
